@@ -1,3 +1,4 @@
+'use strict'
 class Sprite {
   constructor({
     name = 'unnamed',
@@ -25,7 +26,7 @@ class Sprite {
     this.rank = rank
   }
 
-  draw(ctx) {}
+  draw({ ctx }) {}
   action() {}
 }
 

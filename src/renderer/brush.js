@@ -25,9 +25,14 @@ class Brush {
   render({ ctx }) {
     for (const sprite of this.spriteList) {
       if (sprite && sprite.isValid && sprite.isVisible) {
-        sprite.draw(ctx)
+        sprite.draw({ ctx })
       }
     }
+    // for (let i = 0; i < this.spriteList.length; i++) {
+    //   if (this.spriteList[i] && this.spriteList[i].isValid && this.spriteList[i].isVisible) {
+    //     this.spriteList[i].draw(ctx)
+    //   }
+    // }
   }
 
   // 添加sprite 会按照rank属性自动找位置插入

@@ -14,7 +14,11 @@
   },
   "ext": "js html css",
   "watch": [
-    "./src/index.js"
+    "./src/index.js",
+    "./src/renderer/*",
+    "./src/public/*",
+    "./src/model/*",
+    "./src/model/service"
   ],
   "delay": "1000"
 }
