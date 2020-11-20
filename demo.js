@@ -13,6 +13,4 @@ spriteList.map(sprite => {
   return sprite
 })
 
-
-
 console.log(brush)

@@ -1,39 +1,9 @@
 # RPG Simulator
 
-回合制RPG游戏模拟器，研究并尝试实现各种功能，包括但不限于以下内容：
+回合制RPG游戏模拟器，研究各种逻辑并尝试实现各种功能。
 
-## 动画引擎
+## Resources
 
-* 帧动画
-* 图像拼接
+[项目概览](https://github.com/Lansiny/rpg_simulator/tree/master/doc/项目概览.md)
 
-## 战斗
-
-* 回合制战斗系统
-* 角色属性和状态
-* 行动和指令
-* 战斗流程
-* 自动战斗AI
-
-## 菜单栏
-
-* 物品栏
-* 装备栏
-* 状态栏
-* 技能栏
-* 任务栏
-* 队伍管理
-* 存档
-* 数据统计
-
-## 游戏功能
-
-* 商店
-* 抽奖
-* 物品强化
-* 任务
-* 事件
-
-## 游戏状态
-
-* 地图和位置
+[项目进展](https://github.com/Lansiny/rpg_simulator/tree/master/doc/项目进展.md)
