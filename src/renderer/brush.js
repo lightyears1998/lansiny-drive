@@ -42,13 +42,17 @@ class Brush {
           }
         }
       }
-      // TODO: 有问题
-      for (let i = 0; i < this.spriteList.length; i++) {
+      if (sprite.rank < this.spriteList[0].rank) {
+        this.spriteList.unshift(sprite)
+        return
+      }
+      for (let i = 1; i < this.spriteList.length; i++) {
         if (sprite.rank < this.spriteList[i].rank) {
           this.spriteList.splice(i - 1, 0, sprite)
-          break
+          return
         }
       }
+      this.spriteList.push(sprite)
     }
     // this.spriteList.push(sprite)
     // this.spriteList.sort((a, b) => a.rank - b.rank)
