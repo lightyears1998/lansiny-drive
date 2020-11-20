@@ -1,13 +1,15 @@
 const Sprite = require('./sprite')
 const config = require('../../config')
+// const fse = require('fs-extra')
 class Brush {
-  constructor(spriteList = [new Sprite()]) {
-    this.spriteList = spriteList
+  constructor({ dataPath = '' }) {
+    this.spriteList = []
+    this.init({ dataPath })
   }
 
-  // TODO：初始化
-  init(dataPath = '') {
-
+  // TODO：初始化 暂时这样
+  init({ dataPath = '' }) {
+    // this.spriteList = fse.readFileSync(dataPath).spriteList
   }
 
   // 更新
@@ -20,7 +22,7 @@ class Brush {
   }
 
   // 渲染
-  render(ctx) {
+  render({ ctx }) {
     for (const sprite of this.spriteList) {
       if (sprite && sprite.isValid && sprite.isVisible) {
         sprite.draw(ctx)
@@ -29,7 +31,7 @@ class Brush {
   }
 
   // 添加sprite 会按照rank属性自动找位置插入
-  add(sprite = new Sprite()) {
+  add({ sprite = new Sprite() }) {
     if (this.spriteList.length === 0) {
       this.spriteList.push(sprite)
     } else {
@@ -40,6 +42,7 @@ class Brush {
           }
         }
       }
+      // TODO: 有问题
       for (let i = 0; i < this.spriteList.length; i++) {
         if (sprite.rank < this.spriteList[i].rank) {
           this.spriteList.splice(i - 1, 0, sprite)

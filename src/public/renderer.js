@@ -1,12 +1,10 @@
-// index页面 渲染进程脚本
-// 此文件不影响主要进程
-// 预加载脚本
+// index页面 渲染进程
 
 const config = require('../../config')
-// const main = require('../service')
+const main = require('../service')
 // const { dialog } = require('electron').remote
 
-function test({ canvas, context, FPS }) {
+function test({ canvas, ctx, FPS }) {
 
 }
 
@@ -20,15 +18,20 @@ window.addEventListener('mousemove', event => {
 // dom加载完成时执行
 window.addEventListener('DOMContentLoaded', () => {
   const canvas = document.getElementById('canvas')
-  const context = canvas.getContext('2d')
+  const ctx = canvas.getContext('2d')
   canvas.width = config.display.width
   canvas.height = config.display.height
   test({
     canvas,
-    context,
+    ctx,
     FPS: config.display.FPS
   })
 
+  main({
+    canvas,
+    ctx,
+    FPS: config.display.FPS
+  })
   // dialog.showMessageBox({
   //   type: 'warning',
   //   title: '您确定么？',
@@ -39,11 +42,5 @@ window.addEventListener('DOMContentLoaded', () => {
   //   console.log(result)
   // }).catch(err => {
   //   console.log(err)
-  // })
-
-  // main({
-  //   canvas,
-  //   context,
-  //   FPS: config.display.FPS
   // })
 })

@@ -1,23 +1,23 @@
 {
   "name": "rpg_simulator",
   "productName": "rpg_simulator",
-  "version": "1.0.0",
-  "description": "回合制RPG游戏模拟器，研究并初步实现各种功能",
+  "version": "0.0.1",
+  "description": "回合制RPG游戏模拟器，研究并尝试实现各种功能",
   "main": "src/index.js",
   "repository": "https://github.com/Lansiny/rpg_simulator.git",
   "keywords": [],
   "author": {
-    "name": "詹锡磊",
+    "name": "Lansiny",
     "email": "3027475580@qq.com"
   },
   "license": "MIT",
   "scripts": {
     "start": "electron-forge start",
-    "dev": "./node_modules/.bin/nodemon --exec electron ./src/index.js",
-    "commit": "git add . && ./node_modules/.bin/git-cz",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
+    "dev": "./node_modules/.bin/nodemon --exec electron ./src/index.js",
+    "commit": "git add . && ./node_modules/.bin/git-cz",
     "lint": "eslint . --fix"
   },
   "config": {

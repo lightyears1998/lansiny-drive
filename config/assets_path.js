@@ -1,13 +1,11 @@
 'use strict'
 
-module.exports = {
-  img: {
+const prefix = ''
 
-  },
-  audio: {
-
-  },
-  video: {
-
-  }
+const assert = {
+  img: {},
+  audio: {},
+  video: {}
 }
+
+module.exports = assert

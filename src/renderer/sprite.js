@@ -5,7 +5,7 @@ class Sprite {
     width = 64,
     height = 64,
     isVisible = true,
-    isAction = true,
+    isAction = false,
     isValid = true,
     position = { x: 0, y: 0 },
     speed = { x: 0, y: 0 },
