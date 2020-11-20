@@ -1,0 +1,17 @@
+/* index */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#location {
+  position: absolute;
+  font-size: 14px;
+  bottom: 0;
+}
+
+#canvas {
+  margin: 0;
+  border: 1px solid black;
+}

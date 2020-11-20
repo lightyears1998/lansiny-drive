@@ -1,0 +1,79 @@
+{
+  "name": "rpg_simulator",
+  "productName": "rpg_simulator",
+  "version": "1.0.0",
+  "description": "回合制RPG游戏模拟器，研究并初步实现各种功能",
+  "main": "src/index.js",
+  "repository": "https://github.com/Lansiny/rpg_simulator.git",
+  "keywords": [],
+  "author": {
+    "name": "詹锡磊",
+    "email": "3027475580@qq.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "electron-forge start",
+    "dev": "./node_modules/.bin/nodemon --exec electron ./src/index.js",
+    "commit": "git add . && ./node_modules/.bin/git-cz",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "eslint . --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "rpg_simulator"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "fs-extra": "^9.0.1",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "chalk": "^4.1.0",
+    "commitizen": "^4.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "electron": "11.0.1",
+    "eslint": "^7.13.0",
+    "eslint-config-standard": "^16.0.1",
+    "eslint-plugin-html": "^6.1.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.1.0",
+    "single-line-log": "^1.1.2"
+  }
+}
