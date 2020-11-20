@@ -7,10 +7,10 @@ class Screen {
     this.canvas = canvas
     this.ctx = ctx
     this.brush = brush
-    if (FPS >= config.display.maxFPS) {
-      this.FPS = 125
-    } else if (FPS <= config.display.minFPS) {
-      this.FPS = 8
+    if (FPS > config.display.maxFPS) {
+      this.FPS = config.display.maxFPS
+    } else if (FPS < config.display.minFPS) {
+      this.FPS = config.display.minFPS
     } else {
       this.FPS = FPS
     }
