@@ -1,8 +1,12 @@
 'use strict'
 
-const Sprite = require('../display/sprite')
-const config = require('../../config')
+import {Sprite} from '../display/sprite'
+import {config} from '../../config/index'
+
 class Rect extends Sprite {
+  fillStyle: string
+  borderStyle: string
+  borderWidth: number
   constructor({
     // 父类属性
     name = 'rect01',
@@ -54,4 +58,4 @@ class Rect extends Sprite {
   }
 }
 
-module.exports = Rect
+export { Rect }

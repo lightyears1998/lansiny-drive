@@ -1,5 +1,5 @@
-const { app, BrowserWindow, Menu } = require('electron')
-const config = require('./config')
+import { app, BrowserWindow, Menu, MenuItem } from 'electron'
+import { config } from './config/index'
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -26,8 +26,8 @@ function createWindow() {
   })
 
   const menus = [
-    {
-      label: '文件',
+    new MenuItem({
+      label: '菜单',
       submenu: [
         {
           label: '开发者工具',
@@ -43,8 +43,8 @@ function createWindow() {
           role: 'quit'
         }
       ]
-    },
-    {
+    }),
+    new MenuItem({
       label: '帮助',
       submenu: [
         {
@@ -53,7 +53,7 @@ function createWindow() {
           role: 'about'
         }
       ]
-    }
+    })
   ]
 
   const mainMenu = Menu.buildFromTemplate(menus)
@@ -69,9 +69,6 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
-})
-
-app.on('close', () => {
   app.exit()
 })
 

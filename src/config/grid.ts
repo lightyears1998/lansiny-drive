@@ -6,4 +6,4 @@ const grid = {
   column: 10
 }
 
-module.exports = grid
+export { grid }

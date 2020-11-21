@@ -1,5 +1,16 @@
 'use strict'
 class Sprite {
+  name: string
+  group: string
+  width: number
+  height: number
+  isVisible: boolean
+  isAction: boolean
+  isValid: boolean
+  position: { x: number; y: number }
+  speed: { x: number; y: number }
+  offset: { x: number; y: number }
+  rank: number
   constructor({
     name = 'unnamed',
     group = 'unnamed',
@@ -26,15 +37,15 @@ class Sprite {
     this.rank = rank
   }
 
-  buffer({ mainCtx, bufferCtx, mainCanvas, bufferCanvas }) {
+  buffer({ mainCtx, bufferCtx, bufferCanvas }) {
     bufferCtx.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height)
     this.draw({ ctx: bufferCtx })
     mainCtx.drawImage(bufferCanvas, 0, 0)
   }
 
-  draw({ ctx }) {}
+  draw({ ctx }) { }
 
-  action() {}
+  action() { }
 }
 
-module.exports = Sprite
+export { Sprite }

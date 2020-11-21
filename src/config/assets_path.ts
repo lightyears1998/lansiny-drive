@@ -9,4 +9,4 @@ const assert = {
   video: {}
 }
 
-module.exports = assert
+export { assert }

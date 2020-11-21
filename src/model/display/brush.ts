@@ -1,7 +1,7 @@
-const Sprite = require('./sprite')
-const config = require('../../config')
+import {config} from '../../config/index'
 // const fse = require('fs-extra')
 class Brush {
+  spriteList: any[]
   constructor({ spriteList = [] }) {
     this.spriteList = []
   }
@@ -22,13 +22,13 @@ class Brush {
     // 绘制sprite
     for (const sprite of this.spriteList) {
       if (sprite && sprite.isValid && sprite.isVisible) {
-        sprite.buffer({ mainCtx, bufferCtx, mainCanvas, bufferCanvas })
+        sprite.buffer({ mainCtx, bufferCtx, bufferCanvas })
       }
     }
   }
 
   // 添加sprite 会按照rank属性自动找位置插入
-  add({ sprite = new Sprite() }) {
+  add({ sprite }) {
     if (this.spriteList.length === 0) {
       this.spriteList.push(sprite)
     } else {
@@ -61,4 +61,4 @@ class Brush {
   }
 }
 
-module.exports = Brush
+export { Brush }

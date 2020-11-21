@@ -1,7 +1,7 @@
-const Brush = require('../model/display/brush')
-const Rect = require('../model/sprite/rect')
+import { Brush } from '../model/display/brush'
+import { Rect } from '../model/sprite/rect'
 
-module.exports = function () {
+const getBrush = function () {
   const brush = new Brush({})
 
   const rect = new Rect({ name: 'rect01', isAction: true })
@@ -10,3 +10,6 @@ module.exports = function () {
   brush.add({ sprite: rect })
   return brush
 }
+
+
+export { getBrush }

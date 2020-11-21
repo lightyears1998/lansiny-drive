@@ -1,5 +1,5 @@
 'use strict'
-const path = require('path')
+import path = require('path')
 
 const display = {
   maxFPS: 250,
@@ -9,7 +9,7 @@ const display = {
   height: 768
 }
 
-const window = {
+const mainWindow = {
   main: {
     loadFile: path.join(__dirname, '../../public/index.html'),
     webPreferences: {
@@ -29,7 +29,7 @@ const window = {
 
 const config = {
   isDev: true,
-  display,
-  window
+  display: display,
+  window: mainWindow
 }
-module.exports = config
+export { config }
