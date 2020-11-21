@@ -1,7 +1,7 @@
 'use strict'
 
 const Sprite = require('../display/sprite')
-const config = require('../../../config')
+const config = require('../../config')
 class Rect extends Sprite {
   constructor({
     // 父类属性

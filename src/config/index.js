@@ -11,12 +11,12 @@ const display = {
 
 const window = {
   main: {
-    loadFile: path.join(__dirname, '..', 'src/public/index.html'),
+    loadFile: path.join(__dirname, '../../public/index.html'),
     webPreferences: {
-      preload: path.join(__dirname, '..', 'src/bin/preload.js'),
+      preload: path.join(__dirname, '../bin/preload.js'),
       contextIsolation: false,
-      nodeIntegration: true,
-      enableRemoteModule: true
+      nodeIntegration: false,
+      enableRemoteModule: false
     },
     width: display.width + 8,
     height: display.height + 70,

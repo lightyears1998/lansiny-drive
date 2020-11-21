@@ -1,5 +1,5 @@
 const Sprite = require('./sprite')
-const config = require('../../../config')
+const config = require('../../config')
 // const fse = require('fs-extra')
 class Brush {
   constructor({ spriteList = [] }) {

@@ -1,7 +1,7 @@
 'use strict'
 // 预加载脚本
 
-const config = require('../../config')
+const config = require('../config')
 const getBrush = require('../service/get_brush')
 // const { dialog } = require('electron').remote
 
