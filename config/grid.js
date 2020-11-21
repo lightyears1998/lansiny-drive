@@ -1,4 +1,3 @@
-"use strict";
 const grid = {
     width: 48,
     height: 48,

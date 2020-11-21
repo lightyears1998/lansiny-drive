@@ -1,7 +1,7 @@
 // index页面 渲染进程
 
-import { config } from '../config'
-import { main } from '../src/service'
+import { config } from '../../config'
+import { main } from '../service'
 // const { dialog } = require('electron').remote
 
 function test({ canvas, ctx, FPS }) {

@@ -3,13 +3,14 @@
   "configurations": [
     {
       "name": "Electron 主进程",
-      "program": "${workspaceFolder}/src/index.js",
+      "program": "${workspaceFolder}/dist/index.js",
       "request": "launch",
       "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "type": "pwa-node"
+      "type": "pwa-node",
+      "preLaunchTask": "tsc: watch - tsconfig.json"
     }
   ]
 }

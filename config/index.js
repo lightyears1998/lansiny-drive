@@ -14,9 +14,9 @@ const display = {
 };
 const window = {
     main: {
-        loadFile: path_1.default.join(__dirname, '..', 'src/public/index.html'),
+        loadFile: path_1.default.join(__dirname, '../public/index.html'),
         webPreferences: {
-            preload: path_1.default.join(__dirname, '..', 'src/bin/preload.js'),
+            preload: path_1.default.join(__dirname, '../dist/bin/preload.js'),
             contextIsolation: false,
             nodeIntegration: true,
             enableRemoteModule: true

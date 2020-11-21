@@ -10,7 +10,7 @@
   ],
   "verbose": false,
   "execMap": {
-    "js": "electron ./src/index.js"
+    "js": "electron ./dist/index.js"
   },
   "ext": "js html css",
   "watch": [
