@@ -20,6 +20,22 @@ class Rect extends Sprite {
     this.borderWidth = borderWidth
   }
 
+  action() {
+    const flagMoveX = this.position.x < config.display.width - this.width - this.borderWidth * 2
+    const flagMoveY = this.position.y < config.display.height - this.height - this.borderWidth * 2
+    const flagStop = !flagMoveX && !flagMoveY
+    if (flagMoveX) {
+      this.position.x += 1
+    }
+    if (flagMoveY) {
+      this.position.y += 1
+    }
+    // 预测动作停止后可以关闭动作，减少运算量
+    if (flagStop) {
+      this.isAction = false
+    }
+  }
+
   draw({ ctx }) {
     ctx.fillStyle = this.borderStyle
     ctx.fillRect(
@@ -35,19 +51,6 @@ class Rect extends Sprite {
       this.width,
       this.height
     )
-  }
-
-  action() {
-    if (this.position.x < config.display.width - this.width - this.borderWidth * 2) {
-      this.position.x += 1
-    } else {
-      this.isAction = false
-    }
-    if (this.position.y < config.display.height - this.height - this.borderWidth * 2) {
-      this.position.y += 1
-    } else {
-      this.isAction = false
-    }
   }
 }
 

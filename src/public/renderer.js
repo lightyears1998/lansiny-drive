@@ -9,11 +9,11 @@ function test({ canvas, FPS }) {}
 // dom加载完成时执行
 window.addEventListener('DOMContentLoaded', () => {
   // 设置画布
-  const canvas = document.getElementById('canvas')
+  const mainCanvas = document.getElementById('canvas')
   const bufferCanvas = document.createElement('canvas')
 
-  canvas.width = config.display.width
-  canvas.height = config.display.height
+  mainCanvas.width = config.display.width
+  mainCanvas.height = config.display.height
   bufferCanvas.width = config.display.width
   bufferCanvas.height = config.display.height
 
@@ -24,9 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
     FPS = config.display.maxFPS
   }
 
-  // 绘画测试
-  test({ canvas, FPS })
-
   const brush = getBrush()
 
   let now
@@ -34,17 +31,18 @@ window.addEventListener('DOMContentLoaded', () => {
   const interval = 1000 / FPS
   let delta
 
-  function render() {
-    window.requestAnimationFrame(render)
+  function run() {
+    window.requestAnimationFrame(run)
     now = Date.now()
     delta = now - then
     if (delta > interval) {
       then = now - (delta % interval)
-      brush.render({ canvas })
+      brush.render({ mainCanvas, bufferCanvas })
     }
   }
 
-  render()
+  test({ mainCanvas })
+  run()
 
   // await dialog.showMessageBox({
   //   type: 'warning',

@@ -26,7 +26,14 @@ class Sprite {
     this.rank = rank
   }
 
+  buffer({ mainCtx, bufferCtx, mainCanvas, bufferCanvas }) {
+    bufferCtx.clearRect(0, 0, bufferCanvas.width, bufferCanvas.height)
+    this.draw({ ctx: bufferCtx })
+    mainCtx.drawImage(bufferCanvas, 0, 0)
+  }
+
   draw({ ctx }) {}
+
   action() {}
 }
 

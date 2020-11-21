@@ -7,17 +7,22 @@ class Brush {
   }
 
   // 渲染
-  render({ canvas }) {
-    const ctx = canvas.getContext('2d')
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
+  render({ mainCanvas, bufferCanvas }) {
+    const mainCtx = mainCanvas.getContext('2d')
+    const bufferCtx = bufferCanvas.getContext('2d')
+
+    // 清空画布
+    mainCtx.clearRect(0, 0, mainCanvas.width, mainCanvas.height)
+    // 更新sprite数据
     for (const sprite of this.spriteList) {
       if (sprite && sprite.isValid && sprite.isAction) {
         sprite.action()
       }
     }
+    // 绘制sprite
     for (const sprite of this.spriteList) {
       if (sprite && sprite.isValid && sprite.isVisible) {
-        sprite.draw({ ctx })
+        sprite.buffer({ mainCtx, bufferCtx, mainCanvas, bufferCanvas })
       }
     }
   }
