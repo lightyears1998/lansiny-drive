@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Electron 主进程",
-      "program": "${workspaceFolder}/dist/index.js",
+      "program": "${workspaceFolder}/dist/boot/index.js",
       "request": "launch",
       "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/nodemon",
       "skipFiles": [

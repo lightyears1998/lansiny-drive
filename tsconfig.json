@@ -1,6 +1,8 @@
 {
     "include": [],
     "references": [
-        { "path": "./src" }
+        { "path": "./src" },
+        { "path": "./src/boot" },
+        { "path": "./src/script" }
     ]
 }

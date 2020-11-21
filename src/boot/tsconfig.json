@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig-node.json",
+    "exclude": [],
+    "compilerOptions": {
+        "outDir": "../../dist/boot",
+        "rootDir": ".",
+        "composite": true
+    },
+    "references": [
+        { "path": ".." }
+    ]
+}

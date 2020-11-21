@@ -1,5 +1,5 @@
 import { app, BrowserWindow, Menu, MenuItem } from 'electron'
-import { config } from '../config'
+import { config } from './config'
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
