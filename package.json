@@ -1,7 +1,7 @@
 {
   "name": "rpg_simulator",
   "productName": "rpg_simulator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "回合制RPG游戏模拟器，研究并尝试实现各种功能",
   "main": "src/index.js",
   "repository": "https://github.com/Lansiny/rpg_simulator.git",

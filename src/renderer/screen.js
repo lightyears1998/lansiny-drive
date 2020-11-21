@@ -17,13 +17,11 @@ class Screen {
     }
   }
 
-  // TODO：待优化 动画循环
-  run() {
-    setInterval(() => {
-      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
-      this.brush.update()
-      this.brush.render({ ctx: this.ctx })
-    }, 1000 / this.FPS)
+  // 下一帧
+  next() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+    this.brush.update()
+    this.brush.paint({ ctx: this.ctx })
   }
 }
 
