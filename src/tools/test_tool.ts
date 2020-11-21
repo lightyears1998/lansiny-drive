@@ -15,7 +15,7 @@ class Tool {
     }.${tempTime.milliseconds()}`
   }
 
-  getHHmmss (timestamp = 0) {
+  getHHmmss (timestamp: any = 0) {
     const tempTime = moment.duration(timestamp)
     return `${
       tempTime.hours() < 10 ? '0' + tempTime.hours() : tempTime.hours()
@@ -29,7 +29,7 @@ class Tool {
   // 百分比计算
   percentage (num = 0, total = 1, decimalPlaces = 2) {
     const x = Math.pow(10, decimalPlaces)
-    return parseInt(Math.round((num / total) * x * 100)) / x
+    return parseInt(Math.round((num / total) * x * 100).toString()) / x
   }
 
   // 获取固定范围随机数
@@ -71,7 +71,7 @@ class Tool {
         if (tmp >= dataPart) {
           tmp = 0
           remainingTime =
-            ((total - completed) / dataPart) * (Date.now() - startTimeForPart)
+            (((total - completed) / dataPart) * (Date.now() - startTimeForPart)).toString()
           remainingTime = this.getHHmmss(remainingTime)
           startTimeForPart = Date.now()
         }

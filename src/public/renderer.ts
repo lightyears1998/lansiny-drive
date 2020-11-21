@@ -1,7 +1,7 @@
 // index页面 渲染进程
 
-const config = require('../../config')
-const main = require('../service')
+import { config } from '../config'
+import { main } from '../src/service'
 // const { dialog } = require('electron').remote
 
 function test({ canvas, ctx, FPS }) {
@@ -17,7 +17,7 @@ window.addEventListener('mousemove', event => {
 
 // dom加载完成时执行
 window.addEventListener('DOMContentLoaded', () => {
-  const canvas = document.getElementById('canvas')
+  const canvas = document.getElementById('canvas') as any
   const ctx = canvas.getContext('2d')
   canvas.width = config.display.width
   canvas.height = config.display.height

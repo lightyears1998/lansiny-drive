@@ -1,5 +1,9 @@
+export class BattleMode {
+  DTB: {}
+  STB: {}
+  ATB: {}
+  CTB: {}
 
-class BattleMode {
   constructor(params) {
     this.DTB = {}
     this.STB = {}
@@ -7,5 +11,3 @@ class BattleMode {
     this.CTB = {}
   }
 }
-
-module.exports = BattleMode

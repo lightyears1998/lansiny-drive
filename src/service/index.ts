@@ -1,7 +1,8 @@
 const Screen = require('../renderer/screen')
 const Brush = require('../renderer/brush')
 const Rect = require('../model/sprite/rect')
-function main(args) {
+
+export function main(args) {
   const brush = new Brush({})
 
   // TODO：test 添加sprite
@@ -15,6 +16,3 @@ function main(args) {
   const screen = new Screen({ ...args, brush })
   screen.run()
 }
-
-// main()
-module.exports = main

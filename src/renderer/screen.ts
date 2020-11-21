@@ -3,7 +3,12 @@
 const config = require('../../config')
 const Brush = require('./brush')
 
-class Screen {
+export class Screen {
+  canvas: any
+  ctx: any
+  brush: any
+  FPS: any
+
   constructor({ canvas, ctx, FPS = 60, brush = new Brush() }) {
     this.canvas = canvas
     this.ctx = ctx

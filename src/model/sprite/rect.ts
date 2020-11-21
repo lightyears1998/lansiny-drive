@@ -1,8 +1,9 @@
-'use strict'
+
 
 const Sprite = require('../../renderer/sprite')
 const config = require('../../../config')
-class Rect extends Sprite {
+
+export class Rect extends Sprite {
   constructor({
     // 父类属性
     name = 'rect01',
@@ -47,5 +48,3 @@ class Rect extends Sprite {
     }
   }
 }
-
-module.exports = Rect

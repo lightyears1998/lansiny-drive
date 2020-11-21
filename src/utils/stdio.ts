@@ -1,8 +1,6 @@
-'use strict'
+import fs from 'fs'
 
-const fs = require('fs')
-
-function input(title = '') {
+export function input(title = '') {
   process.stdout.write(title || (title += '\n'))
   process.stdin.pause()
   const buf = Buffer.allocUnsafe(10000)
@@ -11,11 +9,6 @@ function input(title = '') {
   return buf.toString('utf8', 0, response).trim()
 }
 
-function print() {
-  return console.log(...arguments)
-}
-
-module.exports = {
-  input,
-  print
+export function print() {
+  return console.log(arguments)
 }

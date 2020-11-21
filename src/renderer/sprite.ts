@@ -1,5 +1,16 @@
-'use strict'
-class Sprite {
+export class Sprite {
+  name: string
+  group: string
+  width: number
+  height: number
+  isVisible: boolean
+  isValid: boolean
+  position: { x: number; y: number }
+  speed: { x: number; y: number }
+  offset: { x: number; y: number }
+  rank: number
+  action: boolean
+
   constructor({
     name = 'unnamed',
     group = 'unnamed',
@@ -18,7 +29,7 @@ class Sprite {
     this.width = width
     this.height = height
     this.isVisible = isVisible
-    this.isAction = isAction
+    this.action = isAction
     this.isValid = isValid
     this.position = position
     this.speed = speed
@@ -27,7 +38,4 @@ class Sprite {
   }
 
   draw({ ctx }) {}
-  action() {}
 }
-
-module.exports = Sprite

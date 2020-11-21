@@ -1,0 +1,9 @@
+{
+    "extends": "../tsconfig-electron.json",
+    "exclude": [],
+    "compilerOptions": {
+        "outDir": ".",
+        "rootDir": ".",
+        "composite": true
+    }
+}

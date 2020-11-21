@@ -1,7 +1,10 @@
 const Sprite = require('./sprite')
 const config = require('../../config')
 // const fse = require('fs-extra')
-class Brush {
+
+export class Brush {
+  spriteList: any[]
+
   constructor({ dataPath = '' }) {
     this.spriteList = []
     this.init({ dataPath })

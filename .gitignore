@@ -1,3 +1,14 @@
+# 依赖
 node_modules
+
+# 编译产物
+config/**.js
+config/**.d.ts
+dist/**
+
+# 打包产物
 out/
+
+# 日志
+*.tsbuildinfo
 yarn-*.log
