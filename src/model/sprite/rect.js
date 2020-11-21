@@ -1,6 +1,6 @@
 'use strict'
 
-const Sprite = require('../../renderer/sprite')
+const Sprite = require('../display/sprite')
 const config = require('../../../config')
 class Rect extends Sprite {
   constructor({
@@ -40,10 +40,13 @@ class Rect extends Sprite {
   action() {
     if (this.position.x < config.display.width - this.width - this.borderWidth * 2) {
       this.position.x += 1
+    } else {
+      this.isAction = false
     }
-
     if (this.position.y < config.display.height - this.height - this.borderWidth * 2) {
       this.position.y += 1
+    } else {
+      this.isAction = false
     }
   }
 }

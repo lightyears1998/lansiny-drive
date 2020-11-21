@@ -1,38 +1,25 @@
 const Sprite = require('./sprite')
-const config = require('../../config')
+const config = require('../../../config')
 // const fse = require('fs-extra')
 class Brush {
-  constructor({ dataPath = '' }) {
+  constructor({ spriteList = [] }) {
     this.spriteList = []
-    this.init({ dataPath })
   }
 
-  // TODO：初始化 暂时这样
-  init({ dataPath = '' }) {
-    // this.spriteList = fse.readFileSync(dataPath).spriteList
-  }
-
-  // 更新
-  update() {
+  // 渲染
+  render({ canvas }) {
+    const ctx = canvas.getContext('2d')
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
     for (const sprite of this.spriteList) {
       if (sprite && sprite.isValid && sprite.isAction) {
         sprite.action()
       }
     }
-  }
-
-  // 渲染
-  paint({ ctx }) {
     for (const sprite of this.spriteList) {
       if (sprite && sprite.isValid && sprite.isVisible) {
         sprite.draw({ ctx })
       }
     }
-    // for (let i = 0; i < this.spriteList.length; i++) {
-    //   if (this.spriteList[i] && this.spriteList[i].isValid && this.spriteList[i].isVisible) {
-    //     this.spriteList[i].draw(ctx)
-    //   }
-    // }
   }
 
   // 添加sprite 会按照rank属性自动找位置插入

@@ -1,24 +1,34 @@
 // index页面 渲染进程
 
 const config = require('../../config')
-const getScreen = require('../service')
+const getBrush = require('../service/get_brush')
 // const { dialog } = require('electron').remote
 
-function test({ canvas, ctx, FPS }) {}
+function test({ canvas, FPS }) {}
 
 // dom加载完成时执行
 window.addEventListener('DOMContentLoaded', () => {
   // 设置画布
   const canvas = document.getElementById('canvas')
-  const ctx = canvas.getContext('2d')
+  const bufferCanvas = document.createElement('canvas')
+
   canvas.width = config.display.width
   canvas.height = config.display.height
-  const FPS = config.display.FPS || 30
+  bufferCanvas.width = config.display.width
+  bufferCanvas.height = config.display.height
+
+  let FPS = config.display.FPS || 60
+  if (FPS < config.display.minFPS) {
+    FPS = config.display.minFPS
+  } else if (FPS > config.display.maxFPS) {
+    FPS = config.display.maxFPS
+  }
 
   // 绘画测试
-  test({ canvas, ctx, FPS })
+  test({ canvas, FPS })
 
-  const screen = getScreen({ canvas, ctx, FPS })
+  const brush = getBrush()
+
   let now
   let then = Date.now()
   const interval = 1000 / FPS
@@ -30,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
     delta = now - then
     if (delta > interval) {
       then = now - (delta % interval)
-      screen.next()
+      brush.render({ canvas })
     }
   }
 
