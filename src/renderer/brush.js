@@ -22,7 +22,7 @@ class Brush {
   }
 
   // 渲染
-  render({ ctx }) {
+  paint({ ctx }) {
     for (const sprite of this.spriteList) {
       if (sprite && sprite.isValid && sprite.isVisible) {
         sprite.draw({ ctx })
