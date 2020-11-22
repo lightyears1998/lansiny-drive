@@ -7,7 +7,7 @@ const getBrush = function () {
   const rect = new Rect({ name: 'rect01', isAction: true })
   rect.borderWidth = 5
 
-  brush.add({ sprite: rect })
+  brush.add({ sprite: rect )
   return brush
 }
 

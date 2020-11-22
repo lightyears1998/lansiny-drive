@@ -1,9 +1,10 @@
 import {config} from '../../config/index'
+import { Sprite } from './sprite'
 // const fse = require('fs-extra')
 class Brush {
-  spriteList: any[]
+  spriteList: Sprite[]
   constructor({ spriteList = [] }) {
-    this.spriteList = []
+    this.spriteList = spriteList
   }
 
   // 渲染
@@ -28,7 +29,7 @@ class Brush {
   }
 
   // 添加sprite 会按照rank属性自动找位置插入
-  add({ sprite }) {
+  add({ sprite = new Sprite({})}) {
     if (this.spriteList.length === 0) {
       this.spriteList.push(sprite)
     } else {
