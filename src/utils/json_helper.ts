@@ -1,6 +1,6 @@
-const fse = require('fs-extra')
+import fse = require('fs-extra')
 
-async function readJson (path) {
+async function readJson(path: any) {
   try {
     return await fse.readJson(path)
   } catch (err) {
@@ -8,7 +8,7 @@ async function readJson (path) {
   }
 }
 
-async function writeJson (path, body) {
+async function writeJson(path: any, body: any) {
   try {
     await fse.writeJson(path, body)
   } catch (err) {
@@ -16,7 +16,7 @@ async function writeJson (path, body) {
   }
 }
 
-module.exports = {
+export {
   readJson,
   writeJson
 }

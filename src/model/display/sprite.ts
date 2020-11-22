@@ -11,6 +11,8 @@ class Sprite {
   speed: { x: number; y: number }
   offset: { x: number; y: number }
   rank: number
+  assetPath: string
+  image: HTMLImageElement
   constructor({
     name = 'unnamed',
     group = 'unnamed',
@@ -22,7 +24,8 @@ class Sprite {
     position = { x: 0, y: 0 },
     speed = { x: 0, y: 0 },
     offset = { x: 0, y: 0 },
-    rank = 0
+    rank = 0,
+    assetPath = ''
   }) {
     this.name = name
     this.group = group
@@ -35,6 +38,7 @@ class Sprite {
     this.speed = speed
     this.offset = offset
     this.rank = rank
+    this.assetPath = assetPath
   }
 
   buffer({ mainCtx, bufferCtx, bufferCanvas }) {

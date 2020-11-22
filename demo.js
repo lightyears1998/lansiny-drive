@@ -1,16 +1,26 @@
-const Sprite = require('./src/renderer/sprite')
-const Brush = require('./src/renderer/brush')
-
-const brush = new Brush({ dataPath: '' })
-const spriteList = [
-  new Sprite({ name: 'sprite1', rank: 1 }),
-  new Sprite({ name: 'sprite2', rank: 0 }),
-  new Sprite({ name: 'sprite3', rank: 3 })
-]
-// 预期所有sprite都加入brush中，但只加入一个
-spriteList.map(sprite => {
-  brush.add({ sprite })
-  return sprite
-})
-
-console.log(brush)
+document.addEventListener("DOMContentLoaded", loadImages, true);
+ 
+var images = new Array(3), imageNum = 0;
+ 
+function loadImages() {
+    for (var i = 0; i < images.length; i++) {
+        images[i] = new Image();
+        images[i].addEventListener("load", trackProcess, true);
+        images[i].src = "images/01.jpg";
+    }
+}
+ 
+function trackProcess() {
+    imageNum++;
+    if (imageNum = images.length) {
+        drawImages();
+    }
+}
+ 
+function drawImages() {
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    for (var i = 0; i < images.length; i++) {
+        context.drawImage(images[i], 200 * i, 0);
+    }
+}

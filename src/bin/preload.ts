@@ -1,12 +1,12 @@
 'use strict'
 // 预加载脚本
-
+import { Brush } from '../model/display/brush'
 import { config } from '../config'
 import { getBrush } from '../service/get_brush'
 // const { dialog } = require('electron').remote
 
-function test(canvas) {
-
+function test(canvas: HTMLElement, brush: Brush) {
+  console.log(brush)
 }
 
 // dom加载完成时执行
@@ -28,7 +28,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   const brush = getBrush()
-
   let now: number
   let then = Date.now()
   const interval = 1000 / FPS
@@ -44,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  test(mainCanvas)
+  test(mainCanvas, brush)
   run()
 
   // await dialog.showMessageBox({

@@ -13,7 +13,7 @@ class Rect extends Sprite {
     width = 25,
     height = 25,
     isAction = true,
-    // 新属性
+    // 子类属性
     fillStyle = 'rgba(255, 255, 255, 1)',
     borderStyle = 'rgba(120, 120, 120, 1)',
     borderWidth = 1

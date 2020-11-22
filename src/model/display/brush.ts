@@ -1,10 +1,19 @@
-import {config} from '../../config/index'
+import { config } from '../../config/index'
 import { Sprite } from './sprite'
 // const fse = require('fs-extra')
 class Brush {
   spriteList: Sprite[]
   constructor({ spriteList = [] }) {
     this.spriteList = spriteList
+  }
+
+  // 加载资源
+  async load() {
+    this.spriteList.forEach(sprite => {
+      const image = new Image(sprite.width, sprite.height)
+      image.src = sprite.assetPath
+      sprite.image = image
+    })
   }
 
   // 渲染
@@ -29,7 +38,7 @@ class Brush {
   }
 
   // 添加sprite 会按照rank属性自动找位置插入
-  add({ sprite = new Sprite({})}) {
+  add({ sprite = new Sprite({}) }) {
     if (this.spriteList.length === 0) {
       this.spriteList.push(sprite)
     } else {
