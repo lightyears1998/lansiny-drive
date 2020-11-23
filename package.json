@@ -16,7 +16,7 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "dev": "nodemon --exec electron ./src/index.js",
+    "dev": "nodemon --exec electron ./dist/boot/index.js",
     "commit": "git add . && git-cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "lint": "eslint . --fix",

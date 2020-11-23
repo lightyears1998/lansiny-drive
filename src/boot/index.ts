@@ -13,7 +13,7 @@ if (require('electron-squirrel-startup')) {
 
 function createWindow() {
   let mainWindow = new BrowserWindow(config.window.main)
-  mainWindow.loadFile(config.window.main.loadFile)
+  // mainWindow.loadFile(config.window.main.loadFile)
 
   // mainWindow.webContents.openDevTools()
 
