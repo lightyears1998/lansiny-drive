@@ -14,6 +14,8 @@ class Brush {
       const image = new Image(sprite.width, sprite.height)
       image.src = prefixPath + sprite.assetPath
       sprite.image = image
+      sprite.width = image.width
+      sprite.height = image.height
     })
   }
 

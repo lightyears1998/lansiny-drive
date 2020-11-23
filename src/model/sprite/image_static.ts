@@ -3,15 +3,11 @@
 import { Sprite } from '../display/sprite'
 
 class ImageStatic extends Sprite {
-  image: HTMLImageElement
   constructor({
     name = 'image01',
-    width = 25,
-    height = 25,
-    isAction = true,
     assetPath = ''
   }) {
-    super({ group: 'image', name, width, height, isAction, assetPath })
+    super({ group: 'image', name, assetPath })
   }
 
   draw({ ctx }) {
