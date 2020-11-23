@@ -9,13 +9,15 @@ class Brush {
   }
 
   // 加载资源
-  async load() {
+  init() {
     this.spriteList.forEach(sprite => {
-      const image = new Image(sprite.width, sprite.height)
+      const image = new Image()
       image.src = prefixPath + sprite.assetPath
-      sprite.image = image
-      sprite.width = image.width
-      sprite.height = image.height
+      image.onload = () => {
+        sprite.width = image.naturalWidth
+        sprite.height = image.naturalHeight
+        sprite.image = image
+      }
     })
   }
 

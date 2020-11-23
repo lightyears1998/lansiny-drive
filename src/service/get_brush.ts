@@ -11,7 +11,8 @@ const getBrush = function () {
 
   const image = new ImageStatic({ name: 'cat', assetPath: assets.image.testImage})
   brush.add({ sprite: image })
-  brush.load()
+
+  brush.init()
   return brush
 }
 
