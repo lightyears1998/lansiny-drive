@@ -1,6 +1,6 @@
-# RPG Simulator
+# Game Simulator
 
-RPG游戏模拟器，研究各种逻辑并尝试实现各种功能。
+游戏模拟器，研究各种逻辑并尝试实现各种功能。
 
 ## Resources
 
