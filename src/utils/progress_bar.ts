@@ -1,17 +1,18 @@
-
 'use strict'
 
-const singleLineLog = require('single-line-log').stdout
+import { stdout as singleLineLog } from 'single-line-log'
 
 class ProgressBar {
+  description: string
+  barLength: number
   constructor({ description = 'Progress', barLength = 25 }) {
     this.description = description
     this.barLength = barLength
   }
 
   // 刷新进度条图案、文字的方法
-  render (completed = 0, total = 100, tipsTextList = ['']) {
-    const percent = (completed / total).toFixed(4) // 计算进度(子任务的 完成数 除以 总数)
+  render(completed = 0, total = 100, tipsTextList = ['']) {
+    const percent = parseFloat((completed / total).toFixed(4)) // 计算进度(子任务的 完成数 除以 总数)
     const cellNum = Math.floor(percent * this.barLength) // 计算需要多少个 █ 符号来拼凑图案
 
     // 拼接黑色条
@@ -31,9 +32,19 @@ class ProgressBar {
     }
 
     // 拼接最终文本
-    const text = this.description + ': ' + (100 * percent).toFixed(2) + '% ' + cell + empty + ' ' + completed + '/' + total
+    const text =
+      this.description +
+      ': ' +
+      (100 * percent).toFixed(2) +
+      '% ' +
+      cell +
+      empty +
+      ' ' +
+      completed +
+      '/' +
+      total
     singleLineLog(text + tipsText)
   }
 }
 
-module.exports = ProgressBar
+export { ProgressBar }

@@ -1,4 +1,5 @@
-import { config } from '../../config/index'
+import { config } from '../../config'
+import { prefixPath } from '../../config/assets'
 import { Sprite } from './sprite'
 // const fse = require('fs-extra')
 class Brush {
@@ -11,7 +12,7 @@ class Brush {
   async load() {
     this.spriteList.forEach(sprite => {
       const image = new Image(sprite.width, sprite.height)
-      image.src = sprite.assetPath
+      image.src = prefixPath + sprite.assetPath
       sprite.image = image
     })
   }
